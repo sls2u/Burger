@@ -1,13 +1,17 @@
+//importmy sql connection object
 const connection = require('./connection.js');
 
+//function to generate mysql syntax
 const orm = {
-  all: function(tableInput, cb){
+  //function to return all  table entries
+  selectAll: function(tableInput, cb){
+
     connection.query('select* from '+tableInput+';', function(err, result){
       if(err) throw err;
       cb(result);
     })
   },
-  update: function(tableInput,condition,cb){
+  updateOne: function(tableInput,condition,cb){
     connection.query('UPDATE' +tableInput+'SET devoured=true WHERE id='+condition+';', function(err,result){
       if(err)throw err;
       cb(result);
@@ -15,7 +19,7 @@ const orm = {
     })
   },
 
-  create: function(tableInput,val,cb){
+  insertOne: function(tableInput,val,cb){
     connection.query('INSERT INTO'+tableInput+ "(burger_name) VAULES ('"+val+"');", function(err,result){
       if(err)throw err;
       cb(result);

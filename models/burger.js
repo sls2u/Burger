@@ -1,21 +1,22 @@
 const orm = require('../config/orm.js');
 
 const burgers = {
-  all: function(cb){
-    orm.all('burgers', function(res){
+  selectAll: function(cb){
+    orm.selectAll('burgers', function(res){
       cb(res);
     })
   },
-  update:function(id,cb){
+  updateOne:function(id,cb){
     orm.update('burgers',id,cb, function(res){
       cb(res);
     });
   },
-  create:function(name,cb){
+  insertOne:function(name,cb){
     orm.create('burgers',name,cb, function(res){
       cb(res);
     });
   }
 
 }
+//export functions for controller folder
 module.exports = burgers;

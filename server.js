@@ -1,9 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const fs = require('fs');
 const exphbs = require('express-handlebars');
-const http = require('http');
-const path = require('path');
+
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -22,7 +20,10 @@ app.set('view engine', 'handlebars');
 // =============================================================
 const routes = require('./controllers/routes.js');
 app.use('/', routes);
-app.get('/', (req, res)=>{
+app.get('/', function(req, res){
+  res.send(router)
+})
+app.post('//burgers', function(req,res){
   res.send(router)
 })
 
