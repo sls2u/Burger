@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text center" id="top-bar">
-      <h1> Eat Da Burger </h1>
+      <h1> Eat The Burger </h1>
     </div>
     <div class="col-xs-6 text center" class="task">
       <div class="row">
         {{#each burger_data}}
           {{#unless this.devoured}}
             <div class="col-xs-9 text center">
-              <pre>{{this.id}}. {{this.burger_name}}</pre>
+              <pre>{{this.id}}. {{this.Burger_Name}}</pre>
             </div>
             <div class="col-xs-3 text center">
               <form method="POST" action="/burgers/udate?_method=PUT" class="button-size">
-                <input type="hidden" name="burger_id" type="text" value= {{this.id}}>
+                <input type="hidden"  name="burger_id" type="text" value= {{this.id}}>
                 <br>
                 <button type="submit" class="btn btn-default">
             Devour It!</button>
@@ -27,7 +27,7 @@
       {{#each burger_data}}
         {{#if this.devoured}}
           <input class="form-control" type="text" placeholder="{{
-            this.id}} {{this.burger_name}}" readonly>
+            this.id}} {{this.Burger_Name}}" readonly>
         {{/if}}
       {{/each}}
 

@@ -25,5 +25,5 @@ connection.connect(function(err){
 })
 
 //export connection for orm use
-connection.connect();
+
 module.exports = connection;
